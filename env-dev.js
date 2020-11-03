@@ -1,1 +1,2 @@
-process.env.MONGO_URL = "localhost:27017"
+process.env.SECRET = "This is secret for JWT";
+process.env.TOKEN_EXPIRY = "1d";
