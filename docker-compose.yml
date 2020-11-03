@@ -1,0 +1,21 @@
+version: "3"
+services:
+  chat_app:
+    container_name: chat_app
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+    links:
+      - mongodb
+  mongodb:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+volumes:
+    data:

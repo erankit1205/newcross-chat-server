@@ -11,7 +11,7 @@ const PORT = process.env.NODE_ENV || 3000;
 
 require("../env-dev");
 
-mongoose.connect(`mongodb://localhost:27017/messagedb`, { useNewUrlParser: true, useUnifiedTopology: true }).then( function() {
+mongoose.connect(`mongodb://mongodb/messagedb`, { useNewUrlParser: true, useUnifiedTopology: true }).then( () => {
     console.log('MongoDB is connected');
   })
     .catch( function(err) {
@@ -22,11 +22,11 @@ let app = express();
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
     console.log('Server listening on port ' + PORT);
 });
 
-let authenticateUser = function(req, res, next) {
+let authenticateUser = (req, res, next) => {
   if(req._parsedUrl.pathname === BASE_URL + '/login') {
       next();
   } else {
