@@ -24,3 +24,5 @@ app.listen(PORT, function () {
 });
 
 app.use(`${BASE_URL}/login`, authController);
+
+module.exports = app;

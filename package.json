@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.11",
     "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "supertest": "^6.0.0"
   }
 }
