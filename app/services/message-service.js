@@ -18,6 +18,7 @@ const postMessage = (req, res) => {
     }
     Message.create(message)
         .then((response) => {
+            console.log("hello")
             res.send(response);
         })
         .catch((err) => {
